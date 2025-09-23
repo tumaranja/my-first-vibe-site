@@ -26,7 +26,7 @@
 .sparkle-button { margin-top: 44px; }
 
 a, a:link, a:visited { color: inherit; text-decoration: underline; }
-a:hover, a:focus-visible { color: hsl(260 97% 61%); }
+a:hover, a:focus-visible { color: hsl(260 97% 50%); }
 h1 { margin: 0; font-size: 48px; line-height: 1.1; }
 p { margin: 0; font-size: 22px; line-height: 1.6; }
 a { color:#c4b5fd; text-decoration:underline; }
