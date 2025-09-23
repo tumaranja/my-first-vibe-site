@@ -1,25 +1,19 @@
-// Minimal sparkle interaction inspired by jh3y CodePen LYJMPBL
-(function () {
-  const button = document.getElementById('contact-button');
-  if (!button) return;
+// JavaScript used to set randomness for particles.
+// Could be done via SSR
 
-  function spawnSparkle(x, y) {
-    const s = document.createElement('span');
-    s.className = 'sparkle';
-    s.style.left = x + 'px';
-    s.style.top = y + 'px';
-    const angle = Math.random() * Math.PI * 2;
-    const dist = 12 + Math.random() * 12;
-    s.style.setProperty('--sx', Math.cos(angle) * dist + 'px');
-    s.style.setProperty('--sy', Math.sin(angle) * dist + 'px');
-    button.appendChild(s);
-    s.addEventListener('animationend', () => s.remove());
-  }
-
-  button.addEventListener('mousemove', (e) => {
-    const rect = button.getBoundingClientRect();
-    spawnSparkle(e.clientX - rect.left, e.clientY - rect.top);
-  });
-})();
+const RANDOM = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
+const PARTICLES = document.querySelectorAll('.particle')
+PARTICLES.forEach(P => {
+  P.setAttribute('style', `
+    --x: ${RANDOM(20, 80)};
+    --y: ${RANDOM(20, 80)};
+    --duration: ${RANDOM(6, 20)};
+    --delay: ${RANDOM(1, 10)};
+    --alpha: ${RANDOM(40, 90) / 100};
+    --origin-x: ${Math.random() > 0.5 ? RANDOM(300, 800) * -1 : RANDOM(300, 800)}%;
+    --origin-y: ${Math.random() > 0.5 ? RANDOM(300, 800) * -1 : RANDOM(300, 800)}%;
+    --size: ${RANDOM(40, 90) / 100};
+  `)
+})
 
 
