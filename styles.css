@@ -48,4 +48,88 @@ a:hover { color:#ffffff; }
 
 /* Button styles removed; will be replaced by CodePen styles */
 
+/* Sparkle button base (inspired by jh3y sparkle button) */
+.sparkle-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 14px 28px;
+  border: 0;
+  border-radius: 9999px;
+  color: #fff;
+  background: radial-gradient(120% 120% at 50% 0%, #a855f7 0%, #7c3aed 40%, #5b21b6 100%);
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.3s ease, filter 0.2s ease;
+  will-change: transform, box-shadow, filter;
+}
+
+.sparkle-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 36px rgba(124, 58, 237, 0.5), 0 0 24px rgba(168, 85, 247, 0.6);
+  filter: brightness(1.06);
+}
+
+.sparkle-button:focus-visible {
+  outline: 2px solid rgba(168, 85, 247, 0.9);
+  outline-offset: 3px;
+}
+
+/* Sheen sweep */
+.sparkle-button::after {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: -20%;
+  width: 40%;
+  height: 160%;
+  transform: rotate(20deg);
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
+  filter: blur(2px);
+  opacity: 0.0;
+  pointer-events: none;
+  animation: sheen 2.8s ease-in-out infinite;
+}
+
+@keyframes sheen {
+  0% { opacity: 0; transform: translateX(0) rotate(20deg); }
+  10% { opacity: 0; }
+  30% { opacity: 0.6; }
+  55% { opacity: 0.0; }
+  100% { opacity: 0; transform: translateX(260%) rotate(20deg); }
+}
+
+/* Sparkle particles */
+.sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+  background: radial-gradient(circle, #ffffff 0%, #d0b3ff 50%, rgba(255,255,255,0) 70%);
+  filter: drop-shadow(0 0 6px rgba(199, 168, 255, 0.9));
+  border-radius: 50%;
+  animation: sparkle-float 600ms ease-out forwards;
+}
+
+.sparkle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 2px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #ffffff;
+  box-shadow: 0 0 6px rgba(255,255,255,0.9);
+}
+
+@keyframes sparkle-float {
+  0% { opacity: 1; transform: translate(var(--sx, 0), var(--sy, 0)) scale(1); }
+  100% { opacity: 0; transform: translate(calc(var(--sx, 0) * 2), calc(var(--sy, 0) * 2 - 8px)) scale(0.6); }
+}
+
 
