@@ -16,4 +16,9 @@ PARTICLES.forEach(P => {
   `)
 })
 
+// Open portfolio on click
+document.querySelector('.sparkle-button button')?.addEventListener('click', () => {
+  window.open('https://www.anja.design/', '_blank', 'noopener');
+});
+
 
