@@ -4,25 +4,26 @@
     <title>My first vibe site</title>
     <style>
       .glow-button {
-        background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+        /* Closer match to the referenced button */
+        background: radial-gradient(120% 120% at 50% 0%, #a855f7 0%, #7c3aed 40%, #5b21b6 100%);
         color: #ffffff;
-        padding: 12px 24px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 14px 28px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
         border-radius: 9999px;
-        box-shadow: 0 0 18px rgba(168, 85, 247, 0.6), 0 0 36px rgba(124, 58, 237, 0.4);
+        box-shadow: 0 10px 30px rgba(124, 58, 237, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
         text-decoration: none;
         font-weight: 600;
         letter-spacing: 0.02em;
         cursor: pointer;
-        transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+        transition: transform 0.15s ease, box-shadow 0.3s ease, filter 0.2s ease;
         position: relative;
         overflow: visible;
       }
 
       .glow-button:hover {
-        transform: translateY(-1px) scale(1.02);
-        box-shadow: 0 0 24px rgba(168, 85, 247, 0.75), 0 0 48px rgba(124, 58, 237, 0.55);
-        filter: brightness(1.05);
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 14px 36px rgba(124, 58, 237, 0.5), 0 0 24px rgba(168, 85, 247, 0.6);
+        filter: brightness(1.06);
       }
 
       .glow-button:focus-visible {
@@ -105,10 +106,13 @@
       }
     </style>
   </head>
-  <body style="background-color:#4b1e3d; color:#ffffff; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; min-height:100vh; margin:0; text-align:center;">
-    <h1>Hello vibes!</h1>
-    <p>Hello from the vibeside. <a href="about.html" style="color:#c4b5fd; text-decoration:underline;">About</a></p>
-    <button class="glow-button" type="button">
+  <body style="background-color:#4b1e3d; color:#ffffff; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; margin:0; text-align:center;">
+    <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+      <h1>Hello vibes!</h1>
+      <p>Hello from the vibeside.</p>
+      <a href="about.html" style="color:#c4b5fd; text-decoration:underline;">About</a>
+    </div>
+    <button class="glow-button" type="button" style="margin-top:28px;">
       Contact me
       <span class="star" aria-hidden="true" style="--x:-18px; --y:-22px; --s:0.9; animation-delay: 0.0s;"></span>
       <span class="star" aria-hidden="true" style="--x:22px; --y:-26px; --s:1.0; animation-delay: 0.4s;"></span>
