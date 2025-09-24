@@ -27,7 +27,7 @@
 
 a, a:link, a:visited { color: inherit; text-decoration: underline; }
 a:hover, a:focus-visible { color: #7c3aed; }
-h1 { margin: 0; font-size: 48px; line-height: 1.1; }
+h1 { margin: 0; font-size: 80px; line-height: 1.1; }
 p { 
   margin: 0; 
   font-size: 22px; 
@@ -46,7 +46,7 @@ p br {
 @media (max-width: 480px) {
   .page { padding: 20px; }
   .stack { gap: 6px; }
-  h1 { font-size: 34px; }
+  h1 { font-size: 56px; }
   p { font-size: 18px; }
   .cta { margin-top: 22px; }
   .glow-button { padding: 12px 22px; font-size: 16px; }
@@ -76,7 +76,7 @@ p br {
 
 @media (min-width: 768px) {
   .page { padding: 40px; }
-  h1 { font-size: 56px; }
+  h1 { font-size: 88px; }
   p { font-size: 24px; }
   .cta { margin-top: 32px; }
   .glow-button { padding: 16px 32px; font-size: 18px; }
