@@ -321,4 +321,20 @@ button svg {
   translate: -25% -5%;
 }
 
+/* Touch devices: set default state to hover state */
+@media (hover: none) and (pointer: coarse) {
+  button {
+    --active: 1;
+    --play-state: running;
+  }
+  
+  .bodydrop {
+    --active: 1;
+  }
+  
+  .particle-pen {
+    --active: 1;
+  }
+}
+
 
