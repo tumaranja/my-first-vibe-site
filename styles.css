@@ -49,48 +49,70 @@ p br {
 
 /* Mobile-first adjustments */
 @media (max-width: 480px) {
-  .page { padding: 20px; }
-  .stack { gap: 6px; }
-  h1 { font-size: 3.2rem; }
+  .page { padding: 1.25rem; }
+  .stack { gap: 1rem; }
+  h1 { font-size: 3.3rem; }
   p { 
-    font-size: 1.125rem; 
+    font-size: 0.9rem; 
     text-align: center;
   }
   p br {
     display: none;
   }
-  .cta { margin-top: 22px; }
+  .cta { margin-top: 1.375rem; }
+  .sparkle-button { margin-top: 2.75rem; }
   .glow-button { padding: 12px 22px; font-size: 1rem; }
-  button { 
-    font-size: 1.2rem;
-    padding: 0.6em 1em;
-    transform: scale(0.8);
+  .sparkle-button { 
+    transform: scale(0.6);
+    transform-origin: top center;
   }
 }
 
-/* Very small screens - ensure horizontal spacing */
+/* Very small screens - 50% of desktop */
 @media (max-width: 360px) {
-  h1 { font-size: 2.8rem; }
-  button { 
-    transform: scale(0.6);
-    font-size: 1rem;
-    padding: 0.5em 0.8em;
+  .page { padding: 1rem; }
+  .stack { gap: 0.875rem; }
+  .sparkle-button { margin-top: 2.25rem; }
+  h1 { font-size: 2.75rem; }
+  p { font-size: 0.75rem; }
+  .sparkle-button { 
+    transform: scale(0.5);
+    transform-origin: top center;
   }
 }
 
 @media (max-width: 280px) {
-  h1 { font-size: 2.4rem; }
-  button { 
+  .page { padding: 0.875rem; }
+  .stack { gap: 0.75rem; }
+  .sparkle-button { margin-top: 2rem; }
+  h1 { font-size: 2.75rem; }
+  p { font-size: 0.75rem; }
+  .sparkle-button { 
     transform: scale(0.5);
-    font-size: 0.9rem;
-    padding: 0.4em 0.6em;
+    transform-origin: top center;
   }
 }
 
 /* Medium screens - transition point for h1 */
 @media (max-width: 600px) and (min-width: 481px) {
-  h1 { font-size: 3.8rem; }
+  h1 { font-size: 4.4rem; }
+  p { font-size: 1.1rem; }
+  .sparkle-button { 
+    transform: scale(0.8);
+    transform-origin: top center;
+  }
 }
+
+/* Small-medium screens - same as mobile */
+@media (max-width: 420px) and (min-width: 361px) {
+  h1 { font-size: 3.3rem; }
+  p { font-size: 0.9rem; }
+  .sparkle-button { 
+    transform: scale(0.6);
+    transform-origin: top center;
+  }
+}
+
 
 @media (min-width: 768px) {
   .page { padding: 40px; }
