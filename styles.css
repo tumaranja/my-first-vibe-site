@@ -28,7 +28,13 @@
 a, a:link, a:visited { color: inherit; text-decoration: underline; }
 a:hover, a:focus-visible { color: #7c3aed; }
 h1 { margin: 0; font-size: 48px; line-height: 1.1; }
-p { margin: 0; font-size: 22px; line-height: 1.6; }
+p { 
+  margin: 0; 
+  font-size: 22px; 
+  line-height: 1.6; 
+  text-wrap: balance;
+  word-break: keep-all;
+}
 
 /* Mobile-first adjustments */
 @media (max-width: 480px) {
