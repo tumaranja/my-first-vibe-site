@@ -18,15 +18,7 @@ PARTICLES.forEach(P => {
 
 // Function to create a new particle
 function createParticle() {
-    console.log('createParticle called');
     const particlePen = document.querySelector('.particle-pen');
-    console.log('Particle pen in createParticle:', particlePen);
-    
-    if (!particlePen) {
-        console.error('Particle pen not found in createParticle!');
-        return;
-    }
-    
     const newParticle = document.createElement('svg');
     newParticle.className = 'particle';
     newParticle.setAttribute('viewBox', '0 0 15 15');
@@ -63,7 +55,6 @@ function createParticle() {
     `);
     
     particlePen.appendChild(newParticle);
-    console.log('Particle added to DOM:', newParticle);
     
     // Fade out after 3 seconds
     setTimeout(() => {
@@ -77,48 +68,19 @@ function createParticle() {
     }, 3000);
 }
 
-// Simple test - add click handler to any button
-console.log('Script loaded');
-
-// Try multiple selectors
-const button1 = document.querySelector('.sparkle-button button');
-const button2 = document.querySelector('button');
-const button3 = document.querySelector('.sparkle-button');
-
-console.log('Button 1 (.sparkle-button button):', button1);
-console.log('Button 2 (button):', button2);
-console.log('Button 3 (.sparkle-button):', button3);
-
-// Add click handler to the first available button
-const targetButton = button1 || button2 || button3;
-
-if (targetButton) {
-  console.log('Adding click handler to:', targetButton);
+// Button click handler - generate 50 stars around button
+document.querySelector('.sparkle-button button')?.addEventListener('click', () => {
+  console.log('clicked!');
   
-  targetButton.addEventListener('click', (e) => {
-    console.log('CLICKED!', e);
-    alert('Button clicked!');
-    
-    // Make particle-pen visible on click
-    const particlePen = document.querySelector('.particle-pen');
-    console.log('Particle pen found:', particlePen);
-    
-    if (particlePen) {
-      particlePen.style.setProperty('--active', '1');
-      particlePen.style.opacity = '1';
-      console.log('Made particle-pen visible');
-    }
-    
-    // Generate exactly 50 new particles
-    for (let i = 0; i < 50; i++) {
-      setTimeout(() => {
-        console.log('Creating particle', i);
-        createParticle();
-      }, i * 10); // Quick burst effect
-    }
-  });
-} else {
-  console.error('No button found!');
-}
+  // Make particle-pen visible on click
+  const particlePen = document.querySelector('.particle-pen');
+  particlePen.style.setProperty('--active', '1');
+  particlePen.style.opacity = '1';
+  
+  // Generate exactly 50 new particles
+  for (let i = 0; i < 50; i++) {
+    setTimeout(() => createParticle(), i * 10); // Quick burst effect
+  }
+});
 
 
