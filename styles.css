@@ -45,6 +45,23 @@ p { margin: 0; font-size: 22px; line-height: 1.6; }
   }
 }
 
+/* Very small screens - ensure horizontal spacing */
+@media (max-width: 360px) {
+  button { 
+    transform: scale(0.6);
+    font-size: 1rem;
+    padding: 0.5em 0.8em;
+  }
+}
+
+@media (max-width: 280px) {
+  button { 
+    transform: scale(0.5);
+    font-size: 0.9rem;
+    padding: 0.4em 0.6em;
+  }
+}
+
 @media (min-width: 768px) {
   .page { padding: 40px; }
   h1 { font-size: 56px; }
