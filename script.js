@@ -70,6 +70,7 @@ function createParticle() {
 
 // Button click handler - generate 50 stars around button
 document.querySelector('.sparkle-button button')?.addEventListener('click', () => {
+  console.log('clicked!');
   // Generate exactly 50 new particles
   for (let i = 0; i < 50; i++) {
     setTimeout(() => createParticle(), i * 10); // Quick burst effect
