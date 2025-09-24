@@ -74,29 +74,6 @@ p { margin: 0; font-size: 22px; line-height: 1.6; }
   }
 }
 
-/* Touch devices - make hover state the default */
-@media (hover: none) and (pointer: coarse) {
-  button {
-    --active: 1;
-    --play-state: running;
-  }
-  .bodydrop {
-    --active: 1;
-  }
-  .particle-pen {
-    --active: 1;
-  }
-  button:before {
-    opacity: 1;
-  }
-  .spark:before {
-    opacity: 1;
-  }
-  .particle {
-    animation-play-state: running;
-  }
-}
-
 /* Button styles removed; will be replaced by CodePen styles */
 
 *,
