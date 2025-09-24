@@ -13,4 +13,37 @@ PARTICLES.forEach(P => {
     `)
 })
 
+// EmojiBlast functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const button = document.querySelector('.sparkle-button button');
+    
+    if (button) {
+        button.addEventListener('click', function(e) {
+            // Get button position for centered burst
+            const rect = button.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            // Trigger emoji burst
+            emojiBlast({
+                emoji: '✨',
+                position: {
+                    x: centerX,
+                    y: centerY
+                },
+                duration: 2000,
+                emojiCount: 8,
+                physics: {
+                    fontSize: { min: 14, max: 28 },
+                    gravity: 0.35,
+                    initialVelocities: {
+                        x: { min: -80, max: 80 },
+                        y: { min: -80, max: 80 }
+                    }
+                }
+            });
+        });
+    }
+});
+
 
