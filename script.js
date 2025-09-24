@@ -33,41 +33,46 @@ function createParticle() {
     ];
     
     const randomPath = paths[Math.floor(Math.random() * paths.length)];
-    newParticle.innerHTML = `<path d="${randomPath}" fill="black" stroke="black" stroke-linecap="round" stroke-linejoin="round" />`;
+    newParticle.innerHTML = `<path d="${randomPath}" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round" />`;
     
-    // Set random properties for more dramatic effect
+    // Start particles around the button (center area) and spread out
+    const startX = RANDOM(40, 60); // Start around center
+    const startY = RANDOM(40, 60); // Start around center
+    const spreadX = RANDOM(0, 100); // Spread to anywhere
+    const spreadY = RANDOM(0, 100); // Spread to anywhere
+    
     newParticle.setAttribute('style', `
-        --x: ${RANDOM(10, 90)};
-        --y: ${RANDOM(10, 90)};
-        --duration: ${RANDOM(3, 8)};
-        --delay: ${RANDOM(0, 2)};
-        --alpha: ${RANDOM(60, 95) / 100};
-        --origin-x: ${Math.random() > 0.5 ? RANDOM(200, 1000) * -1 : RANDOM(200, 1000)}%;
-        --origin-y: ${Math.random() > 0.5 ? RANDOM(200, 1000) * -1 : RANDOM(200, 1000)}%;
-        --size: ${RANDOM(30, 120) / 100};
+        --x: ${startX};
+        --y: ${startY};
+        --duration: ${RANDOM(2, 4)};
+        --delay: 0;
+        --alpha: 1;
+        --origin-x: ${spreadX}%;
+        --origin-y: ${spreadY}%;
+        --size: ${RANDOM(50, 100) / 100};
         animation-play-state: running;
+        opacity: 1;
     `);
     
     particlePen.appendChild(newParticle);
     
     // Fade out after 3 seconds
     setTimeout(() => {
-        newParticle.style.transition = 'opacity 0.5s ease-out';
+        newParticle.style.transition = 'opacity 1s ease-out';
         newParticle.style.opacity = '0';
         setTimeout(() => {
             if (newParticle.parentNode) {
                 newParticle.parentNode.removeChild(newParticle);
             }
-        }, 500);
+        }, 1000);
     }, 3000);
 }
 
-// Button click handler - generate many stars like Wolt Easter Egg
+// Button click handler - generate 50 stars around button
 document.querySelector('.sparkle-button button')?.addEventListener('click', () => {
-  // Generate 15-25 new particles for dramatic effect
-  const numParticles = RANDOM(15, 25);
-  for (let i = 0; i < numParticles; i++) {
-    setTimeout(() => createParticle(), i * 20); // Stagger creation for burst effect
+  // Generate exactly 50 new particles
+  for (let i = 0; i < 50; i++) {
+    setTimeout(() => createParticle(), i * 10); // Quick burst effect
   }
 });
 
