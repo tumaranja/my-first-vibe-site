@@ -48,9 +48,6 @@ p br {
 
 /* Mobile-first adjustments */
 @media (max-width: 480px) {
-  body {
-    background: #4b1e3d !important;
-  }
   .page { padding: 1.25rem; }
   .stack { gap: 1rem; }
   h1 { font-size: 3.3rem; }
@@ -72,9 +69,6 @@ p br {
 
 /* Very small screens - 50% of desktop */
 @media (max-width: 360px) {
-  body {
-    background: #4b1e3d !important;
-  }
   .page { padding: 1rem; }
   .stack { gap: 0.875rem; }
   .sparkle-button { margin-top: 2.25rem; }
@@ -87,9 +81,6 @@ p br {
 }
 
 @media (max-width: 280px) {
-  body {
-    background: #4b1e3d !important;
-  }
   .page { padding: 0.875rem; }
   .stack { gap: 0.75rem; }
   .sparkle-button { margin-top: 2rem; }
@@ -103,9 +94,6 @@ p br {
 
 /* Medium screens - transition point for h1 */
 @media (max-width: 600px) and (min-width: 481px) {
-  body {
-    background: #4b1e3d !important;
-  }
   h1 { font-size: 4.4rem; }
   p { font-size: 1.1rem; }
   .sparkle-button { 
@@ -116,9 +104,6 @@ p br {
 
 /* Small-medium screens - same as mobile */
 @media (max-width: 420px) and (min-width: 361px) {
-  body {
-    background: #4b1e3d !important;
-  }
   h1 { font-size: 3.3rem; }
   p { font-size: 0.9rem; }
   .sparkle-button { 
@@ -142,9 +127,6 @@ p br {
 
 /* Touch devices - make button hover state the default */
 @media (hover: none) and (pointer: coarse) {
-  body {
-    background: #4b1e3d !important;
-  }
   .sparkle-button button {
     --active: 1;
     --play-state: running;
@@ -180,11 +162,7 @@ p br {
 
 body {
   --active: 0;
-  background: hsl(
-    260
-    calc(var(--active) * 97%)
-    6%
-  );
+  background: hsl(260, 0%, 6%);
   display: grid;
   place-items: center;
   min-height: 100vh;
