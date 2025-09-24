@@ -129,6 +129,9 @@ p br {
 
 /* Touch devices - make button hover state the default */
 @media (hover: none) and (pointer: coarse) {
+  body {
+    background: hsl(260, 0%, 6%) !important;
+  }
   .sparkle-button button {
     --active: 1;
     --play-state: running;
@@ -178,7 +181,7 @@ p br {
 
 body {
   --active: 0;
-  background: hsl(260, 0%, 6%);
+  background: hsl(260, 0%, 6%) !important;
   display: grid;
   place-items: center;
   min-height: 100vh;
