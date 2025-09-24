@@ -335,19 +335,6 @@ button svg {
   .particle-pen {
     --active: 1;
   }
-  
-  /* Ensure all hover effects are active */
-  button:before {
-    opacity: 1;
-  }
-  
-  .spark:before {
-    opacity: 1;
-  }
-  
-  .particle {
-    animation-play-state: running;
-  }
 }
 
 
