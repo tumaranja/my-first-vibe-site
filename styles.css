@@ -51,8 +51,14 @@ p br {
 @media (max-width: 480px) {
   .page { padding: 20px; }
   .stack { gap: 6px; }
-  h1 { font-size: 3.5rem; }
-  p { font-size: 1.125rem; }
+  h1 { font-size: 3.2rem; }
+  p { 
+    font-size: 1.125rem; 
+    text-align: left;
+  }
+  p br {
+    display: none;
+  }
   .cta { margin-top: 22px; }
   .glow-button { padding: 12px 22px; font-size: 1rem; }
   button { 
@@ -64,6 +70,7 @@ p br {
 
 /* Very small screens - ensure horizontal spacing */
 @media (max-width: 360px) {
+  h1 { font-size: 2.8rem; }
   button { 
     transform: scale(0.6);
     font-size: 1rem;
@@ -72,11 +79,17 @@ p br {
 }
 
 @media (max-width: 280px) {
+  h1 { font-size: 2.4rem; }
   button { 
     transform: scale(0.5);
     font-size: 0.9rem;
     padding: 0.4em 0.6em;
   }
+}
+
+/* Medium screens - transition point for h1 */
+@media (max-width: 600px) and (min-width: 481px) {
+  h1 { font-size: 3.8rem; }
 }
 
 @media (min-width: 768px) {
