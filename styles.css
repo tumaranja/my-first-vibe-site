@@ -38,6 +38,11 @@ p { margin: 0; font-size: 22px; line-height: 1.6; }
   p { font-size: 18px; }
   .cta { margin-top: 22px; }
   .glow-button { padding: 12px 22px; font-size: 16px; }
+  button { 
+    font-size: 1.2rem;
+    padding: 0.6em 1em;
+    transform: scale(0.8);
+  }
 }
 
 @media (min-width: 768px) {
@@ -46,6 +51,10 @@ p { margin: 0; font-size: 22px; line-height: 1.6; }
   p { font-size: 24px; }
   .cta { margin-top: 32px; }
   .glow-button { padding: 16px 32px; font-size: 18px; }
+  button { 
+    font-size: 1.5rem;
+    padding: 0.9em 1.3em;
+  }
 }
 
 /* Button styles removed; will be replaced by CodePen styles */
