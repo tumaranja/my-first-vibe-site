@@ -27,7 +27,12 @@
 
 a, a:link, a:visited { color: inherit; text-decoration: underline; }
 a:hover, a:focus-visible { color: #7c3aed; }
-h1 { margin: 0; font-size: 80px; line-height: 1.1; }
+h1 { 
+  margin: 0; 
+  font-size: 80px; 
+  line-height: 1.1; 
+  font-family: 'Young Serif', serif;
+}
 p { 
   margin: 0; 
   font-size: 22px; 
