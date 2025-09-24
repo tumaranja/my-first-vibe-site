@@ -127,10 +127,11 @@ p br {
   }
 }
 
-/* Touch devices - make button hover state the default */
+/* Touch devices - make button and page behavior match desktop */
 @media (hover: none) and (pointer: coarse) {
   body {
-    background: hsl(260, 0%, 6%) !important;
+    --active: 1;
+    --play-state: running;
   }
   .sparkle-button button {
     --active: 1;
