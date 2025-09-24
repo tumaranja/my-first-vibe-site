@@ -157,6 +157,20 @@ p br {
 *:before {
   box-sizing: border-box;
 }
+
+/* Reset emoji-blast elements to prevent style inheritance */
+[data-emoji-blast] {
+  all: unset !important;
+  display: inline-block !important;
+  position: absolute !important;
+  pointer-events: none !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
 :root {
   --transition: 0.25s;
   --spark: 1.8s;
@@ -173,7 +187,7 @@ body {
   overflow: hidden;
 }
 
-button {
+.sparkle-button button {
   --cut: 0.1em;
   --active: 0;
   --bg:
@@ -208,7 +222,7 @@ button {
   scale: calc(1 + (var(--active) * 0.1));
 }
 
-button:active {
+.sparkle-button button:active {
   scale: 1;
 }
 
@@ -227,7 +241,7 @@ svg {
   transition: color var(--transition);
 }
 
-button:is(:hover, :focus-visible) path {
+.sparkle-button button:is(:hover, :focus-visible) path {
   animation-name: bounce;
 }
 
@@ -254,7 +268,7 @@ button:is(:hover, :focus-visible) path {
   --base: 30%;
 }
 
-button:before {
+.sparkle-button button:before {
   content: "";
   position: absolute;
   inset: -0.25em;
@@ -335,7 +349,7 @@ button:before {
   }
 }
 
-button:is(:hover, :focus-visible) ~ :is(.bodydrop, .particle-pen) {
+.sparkle-button button:is(:hover, :focus-visible) ~ :is(.bodydrop, .particle-pen) {
   --active: 1;
   --play-state: runnin;
 }
@@ -353,7 +367,7 @@ button:is(:hover, :focus-visible) ~ :is(.bodydrop, .particle-pen) {
 
 
 
-button:is(:hover, :focus-visible) {
+.sparkle-button button:is(:hover, :focus-visible) {
   --active: 1;
   --play-state: running;
 }
@@ -414,7 +428,7 @@ button:is(:hover, :focus-visible) {
   transition: background var(--transition);
 }
 
-button svg {
+.sparkle-button button svg {
   inline-size: 1.25em;
   translate: -25% -5%;
 }

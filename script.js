@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const rect = button.getBoundingClientRect();
             const centerX = rect.left + rect.width / 2;
             const centerY = rect.top + rect.height / 2;
-            console.log(centerX, centerY);
             // Trigger emoji burst
             emojiBlast({
                 emojis: ['✨'],
@@ -41,12 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         y: { min: -80, max: 80 }
                     }
                 },
-                emojiStyle: {
-                    backgroundColor: 'transparent',
-                    borderRadius: '0',
-                    padding: '0',
-                    border: 'none'
-                }
             });
         });
     }
