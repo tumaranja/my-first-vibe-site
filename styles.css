@@ -32,8 +32,8 @@ p {
   margin: 0; 
   font-size: 22px; 
   line-height: 1.6; 
-  text-wrap: balance;
-  word-break: keep-all;
+  orphans: 2;
+  widows: 2;
 }
 
 /* Mobile-first adjustments */
