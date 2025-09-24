@@ -39,6 +39,8 @@ p {
   orphans: 2;
   widows: 2;
   text-align: center;
+  word-break: keep-all;
+  hyphens: none;
 }
 
 p br {
