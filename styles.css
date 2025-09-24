@@ -34,6 +34,12 @@ p {
   line-height: 1.6; 
   orphans: 2;
   widows: 2;
+  text-align: center;
+}
+
+p br {
+  display: block;
+  margin: 0.2em 0;
 }
 
 /* Mobile-first adjustments */
