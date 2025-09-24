@@ -33,7 +33,7 @@ function createParticle() {
     ];
     
     const randomPath = paths[Math.floor(Math.random() * paths.length)];
-    newParticle.innerHTML = `<path d="${randomPath}" fill="white" stroke="white" stroke-linecap="round" stroke-linejoin="round" />`;
+    newParticle.innerHTML = `<path d="${randomPath}" fill="black" stroke="black" stroke-linecap="round" stroke-linejoin="round" />`;
     
     // Start particles around the button (center area) and spread out
     const startX = RANDOM(40, 60); // Start around center
@@ -71,6 +71,12 @@ function createParticle() {
 // Button click handler - generate 50 stars around button
 document.querySelector('.sparkle-button button')?.addEventListener('click', () => {
   console.log('clicked!');
+  
+  // Make particle-pen visible on click
+  const particlePen = document.querySelector('.particle-pen');
+  particlePen.style.setProperty('--active', '1');
+  particlePen.style.opacity = '1';
+  
   // Generate exactly 50 new particles
   for (let i = 0; i < 50; i++) {
     setTimeout(() => createParticle(), i * 10); // Quick burst effect
